@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:icons_plus/icons_plus.dart';
+
+import '../widgets/custom_app_bar.dart';
+import '../widgets/custom_drawer_menu.dart';
 
 class MainHomepage extends StatefulWidget {
   const MainHomepage({super.key});
@@ -11,12 +15,17 @@ class MainHomepage extends StatefulWidget {
 class _MainHomepageState extends State<MainHomepage> {
   @override
   Widget build(BuildContext context) {
+    final Uri whatsApp = Uri.parse('https://wa.me/+255687328084');
     return Scaffold(
+      appBar: const CustomAppBar(),
+      drawer: const CustomDrawerMenu(),
       backgroundColor: Colors.white12,
       floatingActionButton: FloatingActionButton(
           elevation: 0,
           backgroundColor: Colors.teal[300],
-          onPressed: () {},
+          onPressed: () async {
+            launchUrl(whatsApp);
+          },
           tooltip: 'Get a quick help',
           child: const Icon(FontAwesome.whatsapp)),
       body: ListView(

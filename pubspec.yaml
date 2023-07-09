@@ -43,6 +43,8 @@ dependencies:
   share_plus: ^3.0.4
   accordion: ^2.5.1
   icons_plus: ^4.0.0
+  url_launcher: ^6.1.11
+  easy_dynamic_theme: ^2.3.1
 
 dev_dependencies:
   flutter_test:

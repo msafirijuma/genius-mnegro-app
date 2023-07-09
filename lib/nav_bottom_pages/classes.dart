@@ -5,6 +5,7 @@ import '../class_pages/form_one_class.dart';
 import '../class_pages/form_six_class.dart';
 import '../class_pages/form_three_class.dart';
 import '../class_pages/form_two_class.dart';
+import '../widgets/custom_app_bar.dart';
 import '../widgets/custom_drawer_menu.dart';
 
 void main() => runApp(
@@ -22,6 +23,8 @@ class _ClassesState extends State<Classes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(),
+      backgroundColor: Theme.of(context).colorScheme.background,
       drawer: const CustomDrawerMenu(),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8),
@@ -30,7 +33,8 @@ class _ClassesState extends State<Classes> {
             elevation: 2.0,
             margin: const EdgeInsets.all(8),
             child: Container(
-              decoration: const BoxDecoration(color: Colors.tealAccent),
+              decoration:
+                  BoxDecoration(color: Theme.of(context).colorScheme.secondary),
               child: ListTile(
                 onTap: () {
                   Navigator.of(context).push(
@@ -39,7 +43,11 @@ class _ClassesState extends State<Classes> {
                     ),
                   );
                 },
-                title: const Text('Form One'),
+                title: Text(
+                  'Form One',
+                  style:
+                      TextStyle(color: Theme.of(context).colorScheme.tertiary),
+                ),
                 trailing: const Icon(Icons.arrow_outward_rounded),
                 contentPadding: const EdgeInsets.all(10),
               ),
@@ -49,7 +57,8 @@ class _ClassesState extends State<Classes> {
             elevation: 2.0,
             margin: const EdgeInsets.all(8),
             child: Container(
-              decoration: const BoxDecoration(color: Colors.tealAccent),
+              decoration:
+                  BoxDecoration(color: Theme.of(context).colorScheme.secondary),
               child: ListTile(
                 onTap: () {
                   Navigator.of(context).push(
@@ -58,7 +67,9 @@ class _ClassesState extends State<Classes> {
                     ),
                   );
                 },
-                title: const Text('Form Two'),
+                title: Text('Form Two',
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary)),
                 trailing: const Icon(Icons.arrow_outward_rounded),
                 contentPadding: const EdgeInsets.all(10),
               ),
@@ -68,7 +79,8 @@ class _ClassesState extends State<Classes> {
             elevation: 2.0,
             margin: const EdgeInsets.all(8),
             child: Container(
-              decoration: const BoxDecoration(color: Colors.tealAccent),
+              decoration:
+                  BoxDecoration(color: Theme.of(context).colorScheme.secondary),
               child: ListTile(
                 onTap: () {
                   Navigator.of(context).push(
@@ -77,7 +89,9 @@ class _ClassesState extends State<Classes> {
                     ),
                   );
                 },
-                title: const Text('Form Three'),
+                title: Text('Form Three',
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary)),
                 trailing: const Icon(Icons.arrow_outward_rounded),
                 contentPadding: const EdgeInsets.all(10),
               ),
@@ -87,7 +101,8 @@ class _ClassesState extends State<Classes> {
             elevation: 2.0,
             margin: const EdgeInsets.all(8),
             child: Container(
-              decoration: const BoxDecoration(color: Colors.tealAccent),
+              decoration:
+                  BoxDecoration(color: Theme.of(context).colorScheme.secondary),
               child: ListTile(
                 onTap: () {
                   Navigator.of(context).push(
@@ -96,7 +111,9 @@ class _ClassesState extends State<Classes> {
                     ),
                   );
                 },
-                title: const Text('Form Four'),
+                title: Text('Form Four',
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary)),
                 trailing: const Icon(Icons.arrow_outward_rounded),
                 contentPadding: const EdgeInsets.all(10),
               ),
@@ -106,7 +123,8 @@ class _ClassesState extends State<Classes> {
             elevation: 2.0,
             margin: const EdgeInsets.all(8),
             child: Container(
-              decoration: const BoxDecoration(color: Colors.tealAccent),
+              decoration:
+                  BoxDecoration(color: Theme.of(context).colorScheme.secondary),
               child: ListTile(
                 onTap: () {
                   Navigator.of(context).push(
@@ -115,7 +133,9 @@ class _ClassesState extends State<Classes> {
                     ),
                   );
                 },
-                title: const Text('Form Five'),
+                title: Text('Form Five',
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary)),
                 trailing: const Icon(Icons.arrow_outward_rounded),
                 contentPadding: const EdgeInsets.all(10),
               ),
@@ -125,7 +145,8 @@ class _ClassesState extends State<Classes> {
             elevation: 2.0,
             margin: const EdgeInsets.all(8),
             child: Container(
-              decoration: const BoxDecoration(color: Colors.tealAccent),
+              decoration:
+                  BoxDecoration(color: Theme.of(context).colorScheme.secondary),
               child: ListTile(
                 onTap: () {
                   Navigator.of(context).push(
@@ -134,7 +155,9 @@ class _ClassesState extends State<Classes> {
                     ),
                   );
                 },
-                title: const Text('Form Six'),
+                title: Text('Form Six',
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary)),
                 trailing: const Icon(Icons.arrow_outward_rounded),
                 contentPadding: const EdgeInsets.all(10),
               ),

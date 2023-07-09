@@ -15,75 +15,75 @@ class BAMExams extends StatefulWidget {
 class _BAMExamsState extends State<BAMExams> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar: const CustomAppBar(),
-          drawer: const CustomDrawerMenu(),
-          body: Column(
-            children: [
-              ClipPath(
-                clipper: WaveClipperOne(flip: true),
+    return Scaffold(
+      appBar: const CustomAppBar(),
+      drawer: const CustomDrawerMenu(),
+      body: Column(
+        children: [
+          ClipPath(
+            clipper: WaveClipperOne(flip: true),
+            child: Container(
+              height: 120,
+              color: Theme.of(context).colorScheme.secondary,
+              child: const Center(
+                  child: Text(
+                "BAM Exams",
+                style: TextStyle(
+                  fontFamily: "Dancing",
+                  fontSize: 30.0,
+                ),
+              )),
+            ),
+          ),
+          ListView(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            children: <Widget>[
+              Card(
+                elevation: 2.0,
+                margin: const EdgeInsets.all(8),
                 child: Container(
-                  height: 120,
-                  color: Colors.tealAccent[100],
-                  child: const Center(
-                      child: Text(
-                    "BAM Exams",
-                    style: TextStyle(
-                      fontFamily: "Dancing",
-                      fontSize: 30.0,
-                    ),
-                  )),
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.secondary),
+                  child: ListTile(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const BAMNecta(),
+                        ),
+                      );
+                    },
+                    title: const Text('Necta Exams'),
+                    trailing: const Icon(Icons.arrow_outward_rounded),
+                    contentPadding: const EdgeInsets.all(10),
+                  ),
                 ),
               ),
-              ListView(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                padding: const EdgeInsets.symmetric(vertical: 8),
-                children: <Widget>[
-                  Card(
-                    elevation: 2.0,
-                    margin: const EdgeInsets.all(8),
-                    child: Container(
-                      decoration: const BoxDecoration(color: Colors.tealAccent),
-                      child: ListTile(
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const BAMNecta(),
-                            ),
-                          );
-                        },
-                        title: const Text('Necta Exams'),
-                        trailing: const Icon(Icons.arrow_outward_rounded),
-                        contentPadding: const EdgeInsets.all(10),
-                      ),
-                    ),
+              Card(
+                elevation: 2.0,
+                margin: const EdgeInsets.all(8),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.secondary),
+                  child: ListTile(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const BAMMock(),
+                        ),
+                      );
+                    },
+                    title: const Text('Mock Exams'),
+                    trailing: const Icon(Icons.arrow_outward_rounded),
+                    contentPadding: const EdgeInsets.all(10),
                   ),
-                  Card(
-                    elevation: 2.0,
-                    margin: const EdgeInsets.all(8),
-                    child: Container(
-                      decoration: const BoxDecoration(color: Colors.tealAccent),
-                      child: ListTile(
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const BAMMock(),
-                            ),
-                          );
-                        },
-                        title: const Text('Mock Exams'),
-                        trailing: const Icon(Icons.arrow_outward_rounded),
-                        contentPadding: const EdgeInsets.all(10),
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ],
           ),
-        ));
+        ],
+      ),
+    );
   }
 }

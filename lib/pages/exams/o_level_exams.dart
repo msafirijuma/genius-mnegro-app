@@ -17,113 +17,115 @@ class OLevelExams extends StatefulWidget {
 class _OLevelExamsState extends State<OLevelExams> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar: const CustomAppBar(),
-          drawer: const CustomDrawerMenu(),
-          body: Column(
-            children: [
-              ClipPath(
-                clipper: WaveClipperOne(flip: true),
+    return Scaffold(
+      appBar: const CustomAppBar(),
+      drawer: const CustomDrawerMenu(),
+      body: Column(
+        children: [
+          ClipPath(
+            clipper: WaveClipperOne(flip: true),
+            child: Container(
+              height: 120,
+              color: Theme.of(context).colorScheme.secondary,
+              child: const Center(
+                  child: Text(
+                "O Level Exams",
+                style: TextStyle(
+                  fontFamily: "Dancing",
+                  fontSize: 30.0,
+                ),
+              )),
+            ),
+          ),
+          ListView(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            children: <Widget>[
+              Card(
+                elevation: 2.0,
+                margin: const EdgeInsets.all(8),
                 child: Container(
-                  height: 120,
-                  color: Colors.tealAccent[100],
-                  child: const Center(
-                      child: Text(
-                    "O Level Exams",
-                    style: TextStyle(
-                      fontFamily: "Dancing",
-                      fontSize: 30.0,
-                    ),
-                  )),
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.secondary),
+                  child: ListTile(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const FormOneClass(),
+                        ),
+                      );
+                    },
+                    title: const Text('Form One'),
+                    trailing: const Icon(Icons.arrow_outward_rounded),
+                    contentPadding: const EdgeInsets.all(10),
+                  ),
                 ),
               ),
-              ListView(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                padding: const EdgeInsets.symmetric(vertical: 8),
-                children: <Widget>[
-                  Card(
-                    elevation: 2.0,
-                    margin: const EdgeInsets.all(8),
-                    child: Container(
-                      decoration: const BoxDecoration(color: Colors.tealAccent),
-                      child: ListTile(
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const FormOneClass(),
-                            ),
-                          );
-                        },
-                        title: const Text('Form One'),
-                        trailing: const Icon(Icons.arrow_outward_rounded),
-                        contentPadding: const EdgeInsets.all(10),
-                      ),
-                    ),
+              Card(
+                elevation: 2.0,
+                margin: const EdgeInsets.all(8),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.secondary),
+                  child: ListTile(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const FormTwoClass(),
+                        ),
+                      );
+                    },
+                    title: const Text('Form Two'),
+                    trailing: const Icon(Icons.arrow_outward_rounded),
+                    contentPadding: const EdgeInsets.all(10),
                   ),
-                  Card(
-                    elevation: 2.0,
-                    margin: const EdgeInsets.all(8),
-                    child: Container(
-                      decoration: const BoxDecoration(color: Colors.tealAccent),
-                      child: ListTile(
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const FormTwoClass(),
-                            ),
-                          );
-                        },
-                        title: const Text('Form Two'),
-                        trailing: const Icon(Icons.arrow_outward_rounded),
-                        contentPadding: const EdgeInsets.all(10),
-                      ),
-                    ),
+                ),
+              ),
+              Card(
+                elevation: 2.0,
+                margin: const EdgeInsets.all(8),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.secondary),
+                  child: ListTile(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const FormThreeClass(),
+                        ),
+                      );
+                    },
+                    title: const Text('Form Three'),
+                    trailing: const Icon(Icons.arrow_outward_rounded),
+                    contentPadding: const EdgeInsets.all(10),
                   ),
-                  Card(
-                    elevation: 2.0,
-                    margin: const EdgeInsets.all(8),
-                    child: Container(
-                      decoration: const BoxDecoration(color: Colors.tealAccent),
-                      child: ListTile(
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const FormThreeClass(),
-                            ),
-                          );
-                        },
-                        title: const Text('Form Three'),
-                        trailing: const Icon(Icons.arrow_outward_rounded),
-                        contentPadding: const EdgeInsets.all(10),
-                      ),
-                    ),
+                ),
+              ),
+              Card(
+                elevation: 2.0,
+                margin: const EdgeInsets.all(8),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.secondary),
+                  child: ListTile(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const FormFourClass(),
+                        ),
+                      );
+                    },
+                    title: const Text('Form Four'),
+                    trailing: const Icon(Icons.arrow_outward_rounded),
+                    contentPadding: const EdgeInsets.all(10),
                   ),
-                  Card(
-                    elevation: 2.0,
-                    margin: const EdgeInsets.all(8),
-                    child: Container(
-                      decoration: const BoxDecoration(color: Colors.tealAccent),
-                      child: ListTile(
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const FormFourClass(),
-                            ),
-                          );
-                        },
-                        title: const Text('Form Four'),
-                        trailing: const Icon(Icons.arrow_outward_rounded),
-                        contentPadding: const EdgeInsets.all(10),
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ],
           ),
-        ));
+        ],
+      ),
+    );
   }
 }

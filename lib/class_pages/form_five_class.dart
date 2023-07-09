@@ -23,10 +23,10 @@ class _FormFiveClassState extends State<FormFiveClass> {
               clipper: WaveClipperOne(flip: true),
               child: Container(
                 height: 120,
-                color: Colors.tealAccent[100],
+                color: Theme.of(context).colorScheme.secondary,
                 child: const Center(
                     child: Text(
-                  "Form Five",
+                  "Form 5",
                   style: TextStyle(
                     fontFamily: "Dancing",
                     fontSize: 30.0,
@@ -38,7 +38,9 @@ class _FormFiveClassState extends State<FormFiveClass> {
               elevation: 2.0,
               margin: const EdgeInsets.all(8),
               child: Container(
-                decoration: const BoxDecoration(color: Colors.tealAccent),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
                 child: ExpansionTile(
                   title: const Text("Notes"),
                   textColor: Colors.black87,
@@ -164,7 +166,9 @@ class _FormFiveClassState extends State<FormFiveClass> {
               elevation: 2.0,
               margin: const EdgeInsets.all(8),
               child: Container(
-                decoration: const BoxDecoration(color: Colors.tealAccent),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
                 child: ExpansionTile(
                   title: const Text("Videos"),
                   textColor: Colors.black87,

@@ -22,7 +22,7 @@ class _FormTwoClassState extends State<FormTwoClass> {
               clipper: WaveClipperOne(flip: true),
               child: Container(
                 height: 120,
-                color: const Color.fromRGBO(167, 255, 235, 1),
+                color: Theme.of(context).colorScheme.secondary,
                 child: const Center(
                     child: Text(
                   "Form Two",
@@ -37,7 +37,9 @@ class _FormTwoClassState extends State<FormTwoClass> {
               elevation: 2.0,
               margin: const EdgeInsets.all(8),
               child: Container(
-                decoration: const BoxDecoration(color: Colors.tealAccent),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
                 child: ExpansionTile(
                   title: const Text("Notes"),
                   textColor: Colors.black87,
@@ -174,7 +176,9 @@ class _FormTwoClassState extends State<FormTwoClass> {
               elevation: 2.0,
               margin: const EdgeInsets.all(8),
               child: Container(
-                decoration: const BoxDecoration(color: Colors.tealAccent),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
                 child: ExpansionTile(
                   title: const Text("Videos"),
                   textColor: Colors.black87,

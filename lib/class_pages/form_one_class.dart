@@ -22,7 +22,7 @@ class _FormOneClassState extends State<FormOneClass> {
               clipper: WaveClipperOne(flip: true),
               child: Container(
                 height: 120,
-                color: Colors.tealAccent[100],
+                color: Theme.of(context).colorScheme.secondary,
                 child: const Center(
                     child: Text(
                   "Form One",
@@ -37,7 +37,9 @@ class _FormOneClassState extends State<FormOneClass> {
               elevation: 2.0,
               margin: const EdgeInsets.all(8),
               child: Container(
-                decoration: BoxDecoration(color: Colors.tealAccent.shade100),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
                 child: ExpansionTile(
                   title: const Text("Notes"),
                   textColor: Colors.black87,
@@ -174,7 +176,9 @@ class _FormOneClassState extends State<FormOneClass> {
               elevation: 2.0,
               margin: const EdgeInsets.all(8),
               child: Container(
-                decoration: BoxDecoration(color: Colors.tealAccent.shade100),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
                 child: ExpansionTile(
                   title: const Text("Videos"),
                   textColor: Colors.black87,

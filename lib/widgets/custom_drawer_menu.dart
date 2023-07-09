@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:mnegro_app/nav_bottom_pages/homepage.dart';
+import '../globals/globals.dart';
+import '../nav_bottom_pages/exams.dart';
 import '../pages/about/about_us.dart';
 import '../pages/books/books.dart';
 import '../pages/classes/a_level_classes.dart';
 import '../pages/classes/o_level_classes.dart';
-import '../pages/exams/a_level_exams.dart';
-import '../pages/exams/bam_exams.dart';
-import '../pages/exams/o_level_exams.dart';
 import '../pages/help/help.dart';
 import '../pages/setting/settings.dart';
 import '../pages/share_app/share_app.dart';
 import '../pages/technology/tech.dart';
+import '../theme/theme_changer.dart';
 
 class CustomDrawerMenu extends StatefulWidget {
   const CustomDrawerMenu({super.key});
@@ -45,10 +46,14 @@ class _CustomDrawerMenuState extends State<CustomDrawerMenu> {
               ),
             ),
           ),
+          const SizedBox(
+            height: 20,
+          ),
           ListTile(
             leading: const Icon(
-              size: 28,
               Icons.home,
+              color: Colors.teal,
+              size: 28,
             ),
             title: const Text('Home'),
             onTap: () {
@@ -60,7 +65,11 @@ class _CustomDrawerMenuState extends State<CustomDrawerMenu> {
           ExpansionTile(
             title: const Text("Classes"),
             textColor: Colors.black87,
-            leading: const Icon(Icons.class_),
+            leading: const Icon(
+              Icons.class_,
+              color: Colors.teal,
+              size: 28,
+            ),
             //add icon
             childrenPadding: const EdgeInsets.symmetric(horizontal: 10),
             //children padding
@@ -91,63 +100,24 @@ class _CustomDrawerMenuState extends State<CustomDrawerMenu> {
               ),
             ],
           ),
-          ExpansionTile(
-            title: const Text("Exams"),
-            textColor: Colors.black87,
-            leading: const Icon(Icons.newspaper),
-            //add icon
-            childrenPadding: const EdgeInsets.symmetric(horizontal: 10),
-            //children padding
-            children: [
-              ListTile(
-                title: const Text("O Level"),
-                onTap: () {
-                  //action on press
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const OLevelExams(),
-                    ),
-                  );
-                },
-              ),
-              const Divider(
-                color: Colors.black87,
-                height: 2,
-              ),
-              ListTile(
-                title: const Text("A Level"),
-                onTap: () {
-                  //action on press
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const ALevelExams(),
-                    ),
-                  );
-                },
-              ),
-              const Divider(
-                color: Colors.black87,
-                height: 2,
-              ),
-              ListTile(
-                focusColor: Colors.deepOrange,
-                title: const Text("BAM"),
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const BAMExams(),
-                    ),
-                  );
-                },
-              ),
-
-              //more child menu
-            ],
+          ListTile(
+            leading: const Icon(
+              Icons.newspaper,
+              color: Colors.teal,
+              size: 28,
+            ),
+            title: const Text('Exams'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => const Exams()));
+            },
           ),
           ListTile(
             leading: const Icon(
               Icons.trending_up,
+              color: Colors.teal,
+              size: 28,
             ),
             title: const Text('Technology'),
             onTap: () {
@@ -159,6 +129,8 @@ class _CustomDrawerMenuState extends State<CustomDrawerMenu> {
           ListTile(
             leading: const Icon(
               Icons.book_rounded,
+              color: Colors.teal,
+              size: 28,
             ),
             title: const Text('Books'),
             onTap: () {
@@ -171,6 +143,8 @@ class _CustomDrawerMenuState extends State<CustomDrawerMenu> {
           ListTile(
             leading: const Icon(
               Icons.settings,
+              color: Colors.teal,
+              size: 28,
             ),
             title: const Text('Setting'),
             onTap: () {
@@ -185,8 +159,10 @@ class _CustomDrawerMenuState extends State<CustomDrawerMenu> {
           ListTile(
             leading: const Icon(
               Icons.help_rounded,
+              color: Colors.teal,
+              size: 28,
             ),
-            title: const Text('Help'),
+            title: const Text('Help & Support'),
             onTap: () {
               Navigator.pop(context);
               Navigator.of(context).push(
@@ -199,6 +175,8 @@ class _CustomDrawerMenuState extends State<CustomDrawerMenu> {
           ListTile(
             leading: const Icon(
               Icons.share,
+              color: Colors.teal,
+              size: 28,
             ),
             title: const Text('Share'),
             onTap: () {
@@ -213,6 +191,8 @@ class _CustomDrawerMenuState extends State<CustomDrawerMenu> {
           ListTile(
             leading: const Icon(
               Icons.account_circle,
+              color: Colors.teal,
+              size: 28,
             ),
             title: const Text('About'),
             onTap: () {
@@ -220,6 +200,25 @@ class _CustomDrawerMenuState extends State<CustomDrawerMenu> {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => const AboutAppPage()),
               );
+            },
+          ),
+          ListTile(
+            leading: const Icon(
+              Bootstrap.lightbulb_fill,
+              color: Colors.teal,
+              size: 28,
+            ),
+            trailing: Icon(
+              Globals.isDark ? Globals.darkIcon : Globals.lightIcon,
+              color: Colors.teal,
+              size: 28,
+            ),
+            title: const Text('Dark Mode'),
+            onTap: () {
+              setState(() {
+                ThemeChanger.of(context)!.changeTheme();
+                Globals.isDark = !(Globals.isDark);
+              });
             },
           ),
         ],

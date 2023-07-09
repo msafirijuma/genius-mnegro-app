@@ -11,7 +11,7 @@ class _IntroScreenOneState extends State<IntroScreenOne> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.only(top: 20),
+        padding: const EdgeInsets.only(top: 0),
         decoration: const BoxDecoration(color: Colors.white),
         child: Column(
           children: <Widget>[

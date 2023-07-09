@@ -20,7 +20,7 @@ class _FormFiveExamsState extends State<FormFiveExams> {
               clipper: WaveClipperOne(flip: true),
               child: Container(
                 height: 120,
-                color: Colors.tealAccent[100],
+                color: Theme.of(context).colorScheme.secondary,
                 child: const Center(
                     child: Text(
                   "Solved Exams",

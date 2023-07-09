@@ -1,18 +1,27 @@
-// ignore_for_file: avoid_unnecessary_containers
 import 'package:flutter/material.dart';
+// import 'package:icons_plus/icons_plus.dart';
 import 'package:mnegro_app/nav_bottom_pages/homepage.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'intro_screens/intro_screen_one.dart';
 import 'intro_screens/intro_screen_three.dart';
 import 'intro_screens/intro_screen_two.dart';
+import 'theme/dark_theme.dart';
+import 'theme/light_theme.dart';
+import 'theme/theme_changer.dart';
 
+// bool _isDark = false;
 void main() => runApp(
-      MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            fontFamily: 'Poppins',
-          ),
-          home: const MyApp()),
+      ThemeChanger(
+        defaultBrightness: Brightness.light,
+        builder: (context, brightness) {
+          return MaterialApp(
+              color: Theme.of(context).colorScheme.background,
+              debugShowCheckedModeBanner: false,
+              // theme: ThemeData(brightness: brightness, fontFamily: "Poppins"),
+              theme: brightness == Brightness.dark ? darkTheme : lightTheme,
+              home: const MyApp());
+        },
+      ),
     );
 
 class MyApp extends StatefulWidget {
@@ -23,8 +32,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  // Controlling page view
   final PageController _controller = PageController();
   bool isLastPage = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,24 +61,20 @@ class _MyAppState extends State<MyApp> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 isLastPage
-                    ? Container(
-                        // alignment: const Alignment(0, 0.5),
-                        child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                elevation: 0,
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 40, vertical: 20),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20))),
-                            child: const Text('Get Started'),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: ((context) =>
-                                          const Homepage())));
-                            }),
-                      )
+                    ? ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            elevation: 0,
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 40, vertical: 20),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20))),
+                        child: const Text('Get Started'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: ((context) => const Homepage())));
+                        })
                     : Container(
                         alignment: const Alignment(0, 0.5),
                         child: GestureDetector(
@@ -80,7 +87,7 @@ class _MyAppState extends State<MyApp> {
                             alignment: const Alignment(0, 1),
                             child: const Icon(
                               Icons.arrow_circle_right_outlined,
-                              color: Colors.blueAccent,
+                              color: Colors.teal,
                               weight: 20.0,
                               size: 50.0,
                             ),
@@ -105,7 +112,7 @@ class _MyAppState extends State<MyApp> {
                         });
                       },
                       effect: const ExpandingDotsEffect(
-                        activeDotColor: Colors.blueAccent,
+                        activeDotColor: Colors.teal,
                         dotColor: Colors.grey,
                       ),
                       controller: _controller,

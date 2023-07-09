@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mnegro_app/widgets/custom_app_bar.dart';
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import '../../class_pages/form_five_class.dart';
 import '../../class_pages/form_six_class.dart';
+import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_drawer_menu.dart';
 
 class ALevelClasses extends StatefulWidget {
@@ -14,58 +15,77 @@ class ALevelClasses extends StatefulWidget {
 class _ALevelClassesState extends State<ALevelClasses> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar: const CustomAppBar(),
-          drawer: const CustomDrawerMenu(),
-          body: GridView.count(
-            primary: false,
-            padding: const EdgeInsets.all(20),
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            crossAxisCount: 2,
-            children: <Widget>[
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const FormFiveClass()));
-                },
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  color: Colors.teal[400],
-                  child: const Center(
-                    child: Text(
-                      'Form 5',
-                      style: TextStyle(
-                          fontSize: 25.0,
-                          fontWeight: FontWeight.w300,
-                          color: Colors.white),
-                    ),
-                  ),
+    return Scaffold(
+      appBar: const CustomAppBar(),
+      backgroundColor: Theme.of(context).colorScheme.background,
+      drawer: const CustomDrawerMenu(),
+      body: ListView(
+        children: <Widget>[
+          ClipPath(
+            clipper: WaveClipperOne(flip: true),
+            child: Container(
+              height: 120,
+              color: Theme.of(context).colorScheme.secondary,
+              child: const Center(
+                  child: Text(
+                "A Level",
+                style: TextStyle(
+                  fontFamily: "Dancing",
+                  fontSize: 30.0,
                 ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const FormSixClass()));
-                },
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  color: Colors.teal[400],
-                  child: const Center(
-                    child: Text(
-                      'Form 6',
-                      style: TextStyle(
-                          fontSize: 25.0,
-                          fontWeight: FontWeight.w300,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+              )),
+            ),
           ),
-        ));
+          Card(
+            elevation: 2.0,
+            margin: const EdgeInsets.all(8),
+            child: Container(
+              decoration:
+                  BoxDecoration(color: Theme.of(context).colorScheme.secondary),
+              child: ListTile(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const FormFiveClass(),
+                    ),
+                  );
+                },
+                title: Text(
+                  'Form Five',
+                  style:
+                      TextStyle(color: Theme.of(context).colorScheme.tertiary),
+                ),
+                trailing: const Icon(Icons.arrow_outward_rounded),
+                contentPadding: const EdgeInsets.all(10),
+              ),
+            ),
+          ),
+          Card(
+            elevation: 2.0,
+            margin: const EdgeInsets.all(8),
+            child: Container(
+              decoration:
+                  BoxDecoration(color: Theme.of(context).colorScheme.secondary),
+              child: ListTile(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const FormSixClass(),
+                    ),
+                  );
+                },
+                title: Text(
+                  'Form Six',
+                  style:
+                      TextStyle(color: Theme.of(context).colorScheme.tertiary),
+                ),
+                trailing: const Icon(Icons.arrow_outward_rounded),
+                contentPadding: const EdgeInsets.all(10),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

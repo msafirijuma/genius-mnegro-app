@@ -11,7 +11,7 @@ class _IntroScreenThreeState extends State<IntroScreenThree> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 0),
       child: Container(
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(

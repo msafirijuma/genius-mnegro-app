@@ -53,22 +53,6 @@ class _AccordionFAQState extends State<AccordionFAQ> {
           // onOpenSection: () => print('onOpenSection ...'),
           // onCloseSection: () => print('onCloseSection ...'),
         ),
-        AccordionSection(
-          contentBackgroundColor: Colors.teal[100],
-          isOpen: true,
-          leftIcon: const Icon(Icons.insights_rounded, color: Colors.white),
-          headerBackgroundColor: Colors.black26,
-          headerBackgroundColorOpened: Colors.teal[300],
-          header: const Text(
-            'Question 3',
-          ),
-          content: const Text(
-              'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'),
-          contentHorizontalPadding: 20,
-          contentBorderWidth: 1,
-          // onOpenSection: () => print('onOpenSection ...'),
-          // onCloseSection: () => print('onCloseSection ...'),
-        ),
       ],
     );
   }

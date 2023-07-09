@@ -22,7 +22,7 @@ class _FormThreeExamsState extends State<FormThreeExams> {
               clipper: WaveClipperOne(flip: true),
               child: Container(
                 height: 120,
-                color: Colors.tealAccent[100],
+                color: Theme.of(context).colorScheme.secondary,
                 child: const Center(
                     child: Text(
                   "Solved Exams",

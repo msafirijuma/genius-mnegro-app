@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:mnegro_app/exams_pages/form_two/mock_form_two.dart';
 import '../exams_pages/form_five_exams.dart';
 import '../exams_pages/form_four/mock_form_four.dart';
@@ -12,6 +13,7 @@ import '../exams_pages/form_six/tahossa_form_six.dart';
 import '../exams_pages/form_three_exams.dart';
 import '../exams_pages/form_two/necta_form_two.dart';
 import '../exams_pages/form_two/solved_exams_form_two.dart';
+import '../widgets/custom_app_bar.dart';
 import '../widgets/custom_category_divider.dart';
 import '../widgets/custom_drawer_menu.dart';
 
@@ -26,15 +28,32 @@ class _ExamsState extends State<Exams> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(),
+      backgroundColor: Theme.of(context).colorScheme.background,
       drawer: const CustomDrawerMenu(),
       body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 8),
         children: <Widget>[
+          ClipPath(
+            clipper: WaveClipperOne(flip: true),
+            child: Container(
+              height: 120,
+              color: Theme.of(context).colorScheme.secondary,
+              child: Center(
+                  child: Text(
+                "Exams",
+                style: TextStyle(
+                    fontFamily: "Dancing",
+                    fontSize: 30.0,
+                    color: Theme.of(context).colorScheme.tertiary),
+              )),
+            ),
+          ),
           Card(
             elevation: 2.0,
             margin: const EdgeInsets.all(8),
             child: Container(
-              decoration: const BoxDecoration(color: Colors.tealAccent),
+              decoration:
+                  BoxDecoration(color: Theme.of(context).colorScheme.secondary),
               child: ListTile(
                 onTap: () {
                   Navigator.of(context).push(
@@ -44,7 +63,9 @@ class _ExamsState extends State<Exams> {
                   );
                 },
                 leading: const Icon(Icons.class_),
-                title: const Text('Form One'),
+                title: Text('Form One',
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary)),
                 trailing: const Icon(Icons.arrow_outward_rounded),
                 contentPadding: const EdgeInsets.all(10),
               ),
@@ -54,10 +75,13 @@ class _ExamsState extends State<Exams> {
             elevation: 2.0,
             margin: const EdgeInsets.all(8),
             child: Container(
-              decoration: const BoxDecoration(color: Colors.tealAccent),
+              decoration:
+                  BoxDecoration(color: Theme.of(context).colorScheme.secondary),
               child: ExpansionTile(
                 tilePadding: const EdgeInsets.all(8),
-                title: const Text("Form Two"),
+                title: Text("Form Two",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary)),
                 textColor: Colors.black87,
                 leading: const Icon(Icons.class_),
                 //add icon
@@ -104,7 +128,8 @@ class _ExamsState extends State<Exams> {
             elevation: 2.0,
             margin: const EdgeInsets.all(8),
             child: Container(
-              decoration: const BoxDecoration(color: Colors.tealAccent),
+              decoration:
+                  BoxDecoration(color: Theme.of(context).colorScheme.secondary),
               child: ListTile(
                 onTap: () {
                   Navigator.of(context).push(
@@ -114,7 +139,9 @@ class _ExamsState extends State<Exams> {
                   );
                 },
                 leading: const Icon(Icons.class_),
-                title: const Text('Form Three'),
+                title: Text('Form Three',
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary)),
                 trailing: const Icon(Icons.arrow_outward_rounded),
                 contentPadding: const EdgeInsets.all(10),
               ),
@@ -124,10 +151,13 @@ class _ExamsState extends State<Exams> {
             elevation: 2.0,
             margin: const EdgeInsets.all(8),
             child: Container(
-              decoration: const BoxDecoration(color: Colors.tealAccent),
+              decoration:
+                  BoxDecoration(color: Theme.of(context).colorScheme.secondary),
               child: ExpansionTile(
                 tilePadding: const EdgeInsets.all(8),
-                title: const Text("Form Four"),
+                title: Text("Form Four",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary)),
                 textColor: Colors.black87,
                 leading: const Icon(Icons.class_),
                 //add icon
@@ -174,7 +204,8 @@ class _ExamsState extends State<Exams> {
             elevation: 2.0,
             margin: const EdgeInsets.all(8),
             child: Container(
-              decoration: const BoxDecoration(color: Colors.tealAccent),
+              decoration:
+                  BoxDecoration(color: Theme.of(context).colorScheme.secondary),
               child: ListTile(
                 onTap: () {
                   Navigator.of(context).push(
@@ -184,7 +215,9 @@ class _ExamsState extends State<Exams> {
                   );
                 },
                 leading: const Icon(Icons.class_),
-                title: const Text('Form Five'),
+                title: Text('Form Five',
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary)),
                 trailing: const Icon(Icons.arrow_outward_rounded),
                 contentPadding: const EdgeInsets.all(10),
               ),
@@ -194,10 +227,13 @@ class _ExamsState extends State<Exams> {
             elevation: 2.0,
             margin: const EdgeInsets.all(8),
             child: Container(
-              decoration: const BoxDecoration(color: Colors.tealAccent),
+              decoration:
+                  BoxDecoration(color: Theme.of(context).colorScheme.secondary),
               child: ExpansionTile(
                 tilePadding: const EdgeInsets.all(8),
-                title: const Text("Form Six"),
+                title: Text("Form Six",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary)),
                 textColor: Colors.black87,
                 leading: const Icon(Icons.class_),
                 //add icon

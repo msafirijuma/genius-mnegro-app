@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:mnegro_app/widgets/custom_app_bar.dart';
+// import 'package:mnegro_app/widgets/custom_app_bar.dart';
 import 'classes.dart';
 import 'exams.dart';
 import 'main_homepage.dart';
-import '../widgets/custom_drawer_menu.dart';
+// import '../widgets/custom_drawer_menu.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -25,14 +25,13 @@ class _MyAppState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
-      drawer: const CustomDrawerMenu(),
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
         child: bottomNavMenuItems.elementAt(navTabIndex),
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: Colors.teal,
+          color: Theme.of(context).colorScheme.primary,
           boxShadow: [
             BoxShadow(
               blurRadius: 20,
