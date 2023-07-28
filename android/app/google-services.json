@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "710309364696",
+    "project_id": "m-math-app",
+    "storage_bucket": "m-math-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710309364696:android:89a9039abd84f1f86de8ad",
+        "android_client_info": {
+          "package_name": "com.mathac.mnegro_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710309364696-hvugf1h1usdi6gdhjg47nskqg9tklos6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYaf-DAIceXVnyDzRhiXRPJe79VytfEzo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710309364696-hvugf1h1usdi6gdhjg47nskqg9tklos6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

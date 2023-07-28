@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:mnegro_app/widgets/custom_app_bar.dart';
-
+import '../../widgets/otp_screen.dart';
 import 'user_login.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -15,10 +16,11 @@ class _RegisterPageState extends State<RegisterPage> {
   // Define global key (form)
   final formKey = GlobalKey<FormState>();
 
+  FocusNode focusNode = FocusNode();
+
   // Controlling form registration
   final usernameController = TextEditingController();
   final phoneController = TextEditingController();
-  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -45,21 +47,24 @@ class _RegisterPageState extends State<RegisterPage> {
                     style: TextStyle(
                       color: Colors.teal[400],
                     ),
-                    decoration: const InputDecoration(
-                        border: OutlineInputBorder(
+                    decoration: InputDecoration(
+                        border: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.cyan),
                         ),
-                        prefixIcon: Icon(FontAwesome.user),
+                        prefixIcon: const Icon(
+                          FontAwesome.user,
+                          color: Colors.teal,
+                        ),
                         labelText: 'Username',
                         labelStyle: TextStyle(
                             fontSize: 20.0,
                             fontFamily: "Lato",
-                            color: Colors.black54)),
+                            color: Theme.of(context).colorScheme.outline)),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Please enter username";
-                      } else if (value.length <= 2) {
-                        return "Atleast 4 characters are required";
+                      } else if (value.length < 2) {
+                        return "Atleast 2 characters are required";
                       }
                       return null;
                     },
@@ -70,91 +75,21 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 Container(
                   padding: const EdgeInsets.all(8.0),
-                  child: TextFormField(
+                  child: IntlPhoneField(
                     controller: phoneController,
-                    style: TextStyle(
-                      color: Colors.teal[400],
-                    ),
+                    focusNode: focusNode,
                     decoration: const InputDecoration(
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.cyan),
-                        ),
-                        prefixIcon: Icon(FontAwesome.phone),
-                        labelText: 'Phone Number',
-                        labelStyle: TextStyle(
-                            fontSize: 20.0,
-                            fontFamily: "Lato",
-                            color: Colors.black54)),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return "Please enter phone number";
-                      } else if (value.length != 10) {
-                        return "Incorrect phone number format";
-                      }
-                      return null;
+                      labelText: 'Phone Number',
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(),
+                      ),
+                    ),
+                    languageCode: "en",
+                    onChanged: (phone) {
+                      print(phone.completeNumber);
                     },
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextFormField(
-                    controller: passwordController,
-                    obscureText: true,
-                    obscuringCharacter: '*',
-                    style: TextStyle(
-                      color: Theme.of(context).focusColor,
-                    ),
-                    decoration: const InputDecoration(
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.cyan),
-                        ),
-                        prefixIcon: Icon(FontAwesome.lock),
-                        labelText: 'Password',
-                        labelStyle: TextStyle(
-                            fontSize: 20.0,
-                            fontFamily: "Lato",
-                            color: Colors.black54)),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return "Please enter password";
-                      } else if (value.length < 6) {
-                        return "Password is atleast 6 characters are in length";
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextFormField(
-                    controller: passwordController,
-                    obscureText: true,
-                    style: TextStyle(
-                      color: Colors.teal[400],
-                    ),
-                    decoration: const InputDecoration(
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.cyan),
-                        ),
-                        prefixIcon: Icon(FontAwesome.lock),
-                        labelText: 'Confirm Password',
-                        labelStyle: TextStyle(
-                            fontSize: 20.0,
-                            fontFamily: "Lato",
-                            color: Colors.black54)),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return "Please enter passowrd";
-                      } else if (value != passwordController.text) {
-                        return "Passwords do not match";
-                      }
-                      return null;
+                    onCountryChanged: (country) {
+                      print('Country changed to: ' + country.name);
                     },
                   ),
                 ),
@@ -171,15 +106,34 @@ class _RegisterPageState extends State<RegisterPage> {
                             borderRadius: BorderRadius.circular(8))),
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
-                        // toast(context, "Thanks");
-                        // const AlertDialog(
+                        // ScaffoldMessenger.of(context).showSnackBar(
+                        //   SnackBar(
+                        //     backgroundColor:
+                        //         Theme.of(context).colorScheme.primary,
+                        //     duration: const Duration(seconds: 3),
+                        //     content: const Text("Submiting"),
+                        //   ),
+                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) =>
+                                OTPScreen(phoneController.text)),
+                          ),
+                        );
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                backgroundColor: Colors.red,
+                                duration: Duration(seconds: 3),
+                                content: Text("Wrong details!")));
                       }
                     },
-                    child: const Text(
+                    child: Text(
                       "Register",
                       style: TextStyle(
-                        fontSize: 20.0,
-                      ),
+                          fontSize: 20.0,
+                          color: Theme.of(context).colorScheme.outline),
                     ),
                   ),
                 ),

@@ -8,6 +8,7 @@ ThemeData lightTheme = ThemeData(
     backgroundColor: Colors.teal,
   ),
   colorScheme: ColorScheme.light(
+      outline: Colors.black87,
       primary: Colors.teal,
       secondary: Colors.teal.shade400,
       tertiary: Colors.white,

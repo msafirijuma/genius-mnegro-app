@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:icons_plus/icons_plus.dart';
+import 'package:firebase_core/firebase_core.dart';
+// import 'firebase_options.dart';
 import 'package:mnegro_app/nav_bottom_pages/homepage.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'intro_screens/intro_screen_one.dart';
@@ -10,19 +11,23 @@ import 'theme/light_theme.dart';
 import 'theme/theme_changer.dart';
 
 // bool _isDark = false;
-void main() => runApp(
-      ThemeChanger(
-        defaultBrightness: Brightness.light,
-        builder: (context, brightness) {
-          return MaterialApp(
-              color: Theme.of(context).colorScheme.background,
-              debugShowCheckedModeBanner: false,
-              // theme: ThemeData(brightness: brightness, fontFamily: "Poppins"),
-              theme: brightness == Brightness.dark ? darkTheme : lightTheme,
-              home: const MyApp());
-        },
-      ),
-    );
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
+  runApp(
+    ThemeChanger(
+      defaultBrightness: Brightness.light,
+      builder: (context, brightness) {
+        return MaterialApp(
+            color: Theme.of(context).colorScheme.background,
+            debugShowCheckedModeBanner: false,
+            // theme: ThemeData(brightness: brightness, fontFamily: "Poppins"),
+            theme: brightness == Brightness.dark ? darkTheme : lightTheme,
+            home: const MyApp());
+      },
+    ),
+  );
+}
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -71,9 +76,11 @@ class _MyAppState extends State<MyApp> {
                         child: const Text('Get Started'),
                         onPressed: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: ((context) => const Homepage())));
+                            context,
+                            MaterialPageRoute(
+                              builder: ((context) => const Homepage()),
+                            ),
+                          );
                         })
                     : Container(
                         alignment: const Alignment(0, 0.5),

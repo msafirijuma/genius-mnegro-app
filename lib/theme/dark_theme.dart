@@ -8,6 +8,7 @@ ThemeData darkTheme = ThemeData(
     backgroundColor: Colors.teal,
   ),
   colorScheme: const ColorScheme.dark(
+      outline: Colors.white,
       primary: Colors.black87,
       secondary: Colors.black45,
       tertiary: Colors.white,

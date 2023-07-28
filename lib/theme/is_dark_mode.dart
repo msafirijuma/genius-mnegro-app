@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-bool _isDark = false;
+// bool _isDark = false;
 
 class IsDarkMode extends StatefulWidget {
   const IsDarkMode({super.key});

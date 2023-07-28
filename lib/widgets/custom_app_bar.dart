@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:mnegro_app/globals/globals.dart';
+import 'package:mnegro_app/nav_bottom_pages/homepage.dart';
 import 'package:mnegro_app/pages/setting/settings.dart';
 import '../pages/registration/user_register.dart';
 
@@ -23,18 +25,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
       actions: [
         Row(
           children: [
-            // IconButton(
-            //     // ignore: dead_code
-            //     tooltip: 'Change Theme',
-            //     onPressed: () {
-            //       setState(() {
-            //         ThemeChanger.of(context)!.changeTheme();
-            //         Globals.isDark = !(Globals.isDark);
-            //       });
-            //     },
-            //     icon: Icon(
-            //         Globals.isDark ? Globals.darkIcon : Globals.lightIcon)),
-            const Text('Menu'),
+            // const Text('Menu'),
             PopupMenuButton(
                 itemBuilder: (context) {
                   return [
@@ -66,9 +57,12 @@ class _CustomAppBarState extends State<CustomAppBar> {
                         ],
                       ),
                     ),
-                    const PopupMenuItem<int>(
+                    PopupMenuItem<int>(
+                      onTap: () async {
+                        await FirebaseAuth.instance.signOut();
+                      },
                       value: 2,
-                      child: Row(
+                      child: const Row(
                         children: [
                           Icon(
                             Icons.logout,
@@ -98,11 +92,12 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       ),
                     );
                   } else if (value == 2) {
-                    // Navigator.of(context).push(
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const LogoutPage(),
-                    //   ),
-                    // );
+                    FirebaseAuth.instance.signOut();
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const Homepage(),
+                      ),
+                    );
                   }
                 }),
           ],
