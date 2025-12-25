@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:icons_plus/icons_plus.dart';
-
 import '../widgets/custom_app_bar.dart';
 import '../widgets/custom_drawer_menu.dart';
 
@@ -27,7 +26,7 @@ class _MainHomepageState extends State<MainHomepage> {
             launchUrl(whatsApp);
           },
           tooltip: 'Get a quick help',
-          child: const Icon(FontAwesome.whatsapp)),
+          child: const Icon(FontAwesome.whatsapp_brand)),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
         children: [

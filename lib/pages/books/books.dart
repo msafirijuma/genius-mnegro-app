@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:icons_plus/icons_plus.dart';
-
+import 'package:icons_plus/icons_plus.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_drawer_menu.dart';
 
@@ -59,7 +59,7 @@ class _BookShopState extends State<BookShop> {
                     Padding(
                       padding: EdgeInsets.all(5.0),
                       child: Text(
-                        "Mastering O Level Mathemtaics subject requires you to have good resources and books in hands. So here, we've suggested some books to get you there in just a second.",
+                        "Mastering O Level Mathematics subject requires you to have good resources and books in hands. So here, we've suggested some books to get you there in just a second.",
                         style: TextStyle(
                           fontFamily: "Lato",
                           fontSize: 16.0,
@@ -70,17 +70,17 @@ class _BookShopState extends State<BookShop> {
                       height: 20,
                     ),
                     ListTile(
-                      leading: Icon(FontAwesome.arrow_right_long),
+                      leading: Icon(FontAwesome.arrow_right_solid),
                       title:
                           Text('Tanzania Institute of Education Books(T.I.E)'),
                     ),
                     ListTile(
-                      leading: Icon(FontAwesome.arrow_right_long),
+                      leading: Icon(FontAwesome.arrow_right_long_solid),
                       title: Text(
                           'Complete Secondary Basic Mathematics by Mr Msemwa'),
                     ),
                     ListTile(
-                      leading: Icon(FontAwesome.arrow_right_long),
+                      leading: Icon(FontAwesome.arrow_right_long_solid),
                       title: Text('Fundamentals'),
                     ),
                   ]),
@@ -108,7 +108,7 @@ class _BookShopState extends State<BookShop> {
                     Padding(
                       padding: EdgeInsets.all(5.0),
                       child: Text(
-                        "Mastering A Level Mathemtaics subject requires you to have good resources and books in hands. So here, we've suggested some books to get you there in just a second. Just to mention few books but you can learn from other resources as well.",
+                        "Mastering A Level Mathematics subject requires you to have good resources and books in hands. So here, we've suggested some books to get you there in just a second. Just to mention few books but you can learn from other resources as well.",
                         style: TextStyle(
                           fontFamily: "Lato",
                           fontSize: 16.0,
@@ -119,22 +119,22 @@ class _BookShopState extends State<BookShop> {
                       height: 20,
                     ),
                     ListTile(
-                      leading: Icon(FontAwesome.arrow_right_long),
+                      leading: Icon(FontAwesome.arrow_right_long_solid),
                       title:
                           Text('Tanzania Institute of Education Books (T.I.E)'),
                     ),
                     ListTile(
-                      leading: Icon(FontAwesome.arrow_right_long),
+                      leading: Icon(FontAwesome.arrow_right_long_solid),
                       title: Text(
                           "S Chand's Mathematics class XI & XII by H.K Dass & Dr. Rama Verma"),
                     ),
                     ListTile(
-                      leading: Icon(FontAwesome.arrow_right_long),
+                      leading: Icon(FontAwesome.arrow_right_long_solid),
                       title: Text(
                           'Advanced Level Pure Mathematics by C.J. Tranter'),
                     ),
                     ListTile(
-                      leading: Icon(FontAwesome.arrow_right_long),
+                      leading: Icon(FontAwesome.arrow_right_long_solid),
                       title: Text('Pure Mathematics 1 & 2 by J.K Backhouse'),
                     ),
                     SizedBox(

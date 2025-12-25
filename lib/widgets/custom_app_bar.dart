@@ -47,7 +47,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       child: Row(
                         children: [
                           Icon(
-                            FontAwesome.gear,
+                            FontAwesome.gear_solid,
                             color: Colors.black54,
                           ),
                           SizedBox(

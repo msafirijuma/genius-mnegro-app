@@ -8,7 +8,7 @@ import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_drawer_menu.dart';
 
 class OLevelExams extends StatefulWidget {
-  const OLevelExams({Key? key}) : super(key: key);
+  const OLevelExams({super.key});
 
   @override
   State<OLevelExams> createState() => _OLevelExamsState();

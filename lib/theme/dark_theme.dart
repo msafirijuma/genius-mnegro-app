@@ -12,5 +12,5 @@ ThemeData darkTheme = ThemeData(
       primary: Colors.black87,
       secondary: Colors.black45,
       tertiary: Colors.white,
-      background: Colors.black),
+      surface: Colors.black),
 );

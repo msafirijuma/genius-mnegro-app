@@ -5,7 +5,7 @@ import '../../../../widgets/custom_app_bar.dart';
 import '../../../../widgets/custom_drawer_menu.dart';
 
 class ShareApp extends StatefulWidget {
-  const ShareApp({Key? key}) : super(key: key);
+  const ShareApp({super.key});
 
   @override
   State<ShareApp> createState() => _ShareAppState();
@@ -44,7 +44,9 @@ class _ShareAppState extends State<ShareApp> {
                     shape: BeveledRectangleBorder(
                         borderRadius: BorderRadius.circular(5))),
                 onPressed: () {
-                  Share.share('ourmobileapplink');
+                  SharePlus.instance.share(
+                      ShareParams(text: 'check out my website https://example.com')
+                  );
                 },
                 child: const Text('Share App'))
           ],

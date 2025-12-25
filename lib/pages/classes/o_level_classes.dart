@@ -9,7 +9,7 @@ import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_drawer_menu.dart';
 
 class OLevelClasses extends StatefulWidget {
-  const OLevelClasses({Key? key}) : super(key: key);
+  const OLevelClasses({super.key});
 
   @override
   State<OLevelClasses> createState() => _OLevelClassesState();
@@ -20,7 +20,7 @@ class _OLevelClassesState extends State<OLevelClasses> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       drawer: const CustomDrawerMenu(),
       body: ListView(
         children: <Widget>[

@@ -25,7 +25,7 @@ class _MyAppState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Center(
         child: bottomNavMenuItems.elementAt(navTabIndex),
       ),

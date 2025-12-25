@@ -12,5 +12,5 @@ ThemeData lightTheme = ThemeData(
       primary: Colors.teal,
       secondary: Colors.teal.shade400,
       tertiary: Colors.white,
-      background: const Color(0xFFCCC2C2)),
+      surface: const Color(0xFFCCC2C2)),
 );

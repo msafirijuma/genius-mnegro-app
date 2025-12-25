@@ -6,7 +6,7 @@ import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_drawer_menu.dart';
 
 class BAMExams extends StatefulWidget {
-  const BAMExams({Key? key}) : super(key: key);
+  const BAMExams({super.key});
 
   @override
   State<BAMExams> createState() => _BAMExamsState();

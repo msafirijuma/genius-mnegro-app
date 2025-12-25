@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                       print(phone.completeNumber);
                     },
                     onCountryChanged: (country) {
-                      print('Country changed to: ' + country.name);
+                      print('Country changed to: ${country.name}');
                     },
                   ),
                 ),

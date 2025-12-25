@@ -6,7 +6,7 @@ import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_drawer_menu.dart';
 
 class ALevelClasses extends StatefulWidget {
-  const ALevelClasses({Key? key}) : super(key: key);
+  const ALevelClasses({super.key});
 
   @override
   State<ALevelClasses> createState() => _ALevelClassesState();
@@ -17,7 +17,7 @@ class _ALevelClassesState extends State<ALevelClasses> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       drawer: const CustomDrawerMenu(),
       body: ListView(
         children: <Widget>[

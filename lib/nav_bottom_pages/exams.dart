@@ -18,7 +18,7 @@ import '../widgets/custom_category_divider.dart';
 import '../widgets/custom_drawer_menu.dart';
 
 class Exams extends StatefulWidget {
-  const Exams({Key? key}) : super(key: key);
+  const Exams({super.key});
 
   @override
   State<Exams> createState() => _ExamsState();
@@ -29,7 +29,7 @@ class _ExamsState extends State<Exams> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       drawer: const CustomDrawerMenu(),
       body: ListView(
         children: <Widget>[

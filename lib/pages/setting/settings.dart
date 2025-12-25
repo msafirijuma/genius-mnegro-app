@@ -6,7 +6,7 @@ import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_drawer_menu.dart';
 
 class SettingsPage extends StatefulWidget {
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   State<SettingsPage> createState() => _SettingsPageState();
@@ -56,7 +56,7 @@ class _SettingsPageState extends State<SettingsPage> {
             ListTile(
               onTap: () {},
               contentPadding: const EdgeInsets.all(0),
-              leading: const Icon(FontAwesome.user_pen),
+              leading: const Icon(FontAwesome.user_pen_solid),
               title: const Text("Edit Profile"),
             ),
           ],

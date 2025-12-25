@@ -13,7 +13,7 @@ void main() => runApp(
     );
 
 class Classes extends StatefulWidget {
-  const Classes({Key? key}) : super(key: key);
+  const Classes({super.key});
 
   @override
   State<Classes> createState() => _ClassesState();
@@ -24,7 +24,7 @@ class _ClassesState extends State<Classes> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       drawer: const CustomDrawerMenu(),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8),

@@ -3,7 +3,7 @@ import '../../../../widgets/custom_app_bar.dart';
 import '../../../../widgets/custom_drawer_menu.dart';
 
 class AboutAppPage extends StatefulWidget {
-  const AboutAppPage({Key? key}) : super(key: key);
+  const AboutAppPage({super.key});
 
   @override
   State<AboutAppPage> createState() => _AboutAppPageState();

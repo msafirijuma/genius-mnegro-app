@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:mnegro_app/widgets/custom_app_bar.dart';
 import '../../widgets/otp_screen.dart';
+import '../../widgets/otp_screen_page.dart';
 import 'user_login.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
@@ -89,7 +90,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       print(phone.completeNumber);
                     },
                     onCountryChanged: (country) {
-                      print('Country changed to: ' + country.name);
+                      print('Country changed to: ${country.name}');
                     },
                   ),
                 ),
@@ -114,13 +115,13 @@ class _RegisterPageState extends State<RegisterPage> {
                         //     content: const Text("Submiting"),
                         //   ),
                         // );
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: ((context) =>
-                                OTPScreen(phoneController.text)),
-                          ),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: ((context) =>
+                        //         PinputExample(phoneController.text)),
+                        //   ),
+                        // );
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(

@@ -19,7 +19,7 @@ void main() async {
       defaultBrightness: Brightness.light,
       builder: (context, brightness) {
         return MaterialApp(
-            color: Theme.of(context).colorScheme.background,
+            color: Theme.of(context).colorScheme.surface,
             debugShowCheckedModeBanner: false,
             // theme: ThemeData(brightness: brightness, fontFamily: "Poppins"),
             theme: brightness == Brightness.dark ? darkTheme : lightTheme,
